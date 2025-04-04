@@ -24,14 +24,20 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 50px auto 44px;
+  grid-template-columns: auto 1fr 44px;
   column-gap: $gutter;
   align-items: center;
   padding: 0.75rem $gutter;
 
   .logo {
     display: flex;
-    justify-content: center;
+    align-items: center;
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   span {
@@ -41,24 +47,15 @@ header {
     text-align: center;
   }
 
-  @media (max-width: 600px) {
-    img {
-      width: 50px;
-      height: 50px;
-    }
-  }
-
-  @media (min-width: 601px) and (max-width: 1200px) {
-    img {
+  @media (min-width: 601px) {
+    .logo img {
       width: 90px;
-      height: 90px;
     }
   }
 
   @media (min-width: 1201px) {
-    img {
+    .logo img {
       width: 135px;
-      height: 135px;
     }
   }
 }

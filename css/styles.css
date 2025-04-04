@@ -325,7 +325,7 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 50px auto 44px;
+  grid-template-columns: auto 1fr 44px;
   -moz-column-gap: 10px;
        column-gap: 10px;
   align-items: center;
@@ -333,7 +333,12 @@ header {
 }
 header .logo {
   display: flex;
-  justify-content: center;
+  align-items: center;
+}
+header .logo img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 header span {
   font-size: 1.6rem;
@@ -341,22 +346,14 @@ header span {
   color: #33322b;
   text-align: center;
 }
-@media (max-width: 600px) {
-  header img {
-    width: 50px;
-    height: 50px;
-  }
-}
-@media (min-width: 601px) and (max-width: 1200px) {
-  header img {
+@media (min-width: 601px) {
+  header .logo img {
     width: 90px;
-    height: 90px;
   }
 }
 @media (min-width: 1201px) {
-  header img {
+  header .logo img {
     width: 135px;
-    height: 135px;
   }
 }
 
