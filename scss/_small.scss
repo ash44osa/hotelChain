@@ -1,0 +1,250 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// ----------- Base Styles -----------
+body {
+  font-family: $defaultFont;
+  font-weight: $lightWeight;
+  background-color: #f9f9f9;
+  color: #222;
+  min-width: 320px;
+}
+
+// ----------- Header Styles -----------
+#headerWrapper {
+  border-bottom: 1px solid $greyColor;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 50px auto 44px;
+  column-gap: $gutter;
+  align-items: center;
+  padding: 0.75rem $gutter;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  span {
+    font-size: 1.6rem;
+    font-weight: $normalWeight;
+    color: $primaryColor;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1200px) {
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    img {
+      width: 135px;
+      height: 135px;
+    }
+  }
+}
+
+// ----------- Navigation -----------
+#hamburgerBtn {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: $primaryColor;
+
+  &::before {
+    content: "\2630";
+  }
+}
+
+.moveOver #hamburgerBtn::before {
+  content: "\2715";
+}
+
+nav {
+  background-color: lighten($accentColor, 35%);
+  width: 180px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateX(100%);
+  z-index: 1000;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      display: block;
+      padding: 0.9rem 0.5rem;
+      text-align: right;
+      text-decoration: none;
+      border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+      color: $primaryColor;
+      font-weight: $normalWeight;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    li.active a {
+      color: $secondaryColor;
+      font-weight: bold;
+      background-color: rgba($secondaryColor, 0.1);
+    }
+  }
+}
+
+.moveOver > .content {
+  transform: translateX(-180px);
+  transition: transform 0.5s ease;
+}
+
+#pageWrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+// ----------- Main -----------
+main {
+  h1 {
+    padding: 1rem $gutter 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $secondaryColor;
+  }
+
+  p {
+    padding: 0.5rem $gutter;
+    color: #333;
+    line-height: $leading;
+  }
+}
+
+// ----------- Hotel Cards -----------
+#hotelLobby {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+
+  section {
+    background-color: #fff;
+    border: 2px solid $greyColor;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 400px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid $accentColor;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: $normalWeight;
+    color: $primaryColor;
+    margin: 0.75rem 0 0.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: darken($primaryColor, 25%);
+    margin-bottom: 0.4rem;
+    line-height: $leading;
+  }
+
+  p.location {
+    font-style: italic;
+    color: darken($accentColor, 15%);
+  }
+
+  p.phone {
+    font-weight: $normalWeight;
+    font-size: 1rem;
+    color: $secondaryColor;
+    background-color: lighten($secondaryColor, 43%);
+    border: 2px solid $secondaryColor;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: lighten($secondaryColor, 35%);
+    }
+  }
+
+  .number {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: $primaryColor;
+    border: 2px solid $primaryColor;
+    border-radius: 50px;
+    background-color: lighten($primaryColor, 45%);
+  }
+}
+
+// ----------- Footer -----------
+#footerWrapper {
+  background-color: $primaryColor;
+}
+
+footer {
+  font-size: 0.85rem;
+  padding: 1rem $gutter;
+  color: $greyColor;
+  text-align: center;
+  line-height: $leading;
+
+  a {
+    color: lighten($greyColor, 10%);
+    text-decoration: underline;
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+}

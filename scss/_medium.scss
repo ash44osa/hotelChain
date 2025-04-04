@@ -1,0 +1,71 @@
+#hotelLobby {
+  display: grid;
+  gap: 1rem; // Space between sections
+  grid-template-columns: 1fr; // Force single column by default
+
+  section {
+    display: grid;
+    grid-template-areas:
+      "photo"
+      "name"
+      "location"
+      "number";
+    grid-template-columns: 1fr; // Single column inside section
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+
+  img {
+    grid-area: photo;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  h2 {
+    grid-area: name;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p.location {
+    grid-area: location;
+  }
+
+  p.phone {
+    grid-area: number;
+    font-weight: bold;
+  }
+
+  /* ----------- Medium Screens (Force One Column) ----------- */
+  @media (min-width: 768px) {
+    #hotelLobby {
+      grid-template-columns: 1fr; // Force single column
+    }
+
+    section {
+      grid-template-areas:
+        "photo name"
+        "photo location"
+        "photo number";
+      grid-template-columns: 150px auto; // Two columns inside section
+      text-align: left;
+      align-items: center;
+    }
+
+    img {
+      width: 150px; // Constrain image width
+      height: auto;
+    }
+  }
+}

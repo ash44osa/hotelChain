@@ -1,0 +1,38 @@
+header,
+nav,
+main {
+  max-width: 960px;
+  margin: auto;
+}
+
+/* NAVIGATION STUFF GOES HERE  */
+#hamburgerBtn {
+  display: none;
+}
+.moveOver > .content {
+  transform: translateX(8px);
+}
+nav {
+  background-color: transparent;
+  position: static;
+  transform: translateX(0);
+  width: auto;
+  ul {
+    display: flex;
+    margin-left: $gutter;
+  }
+  ul li a {
+    padding: 0.6rem 1.5rem;
+    border: none;
+  }
+} // end nav
+#navWrapper {
+  background-color: #f7f7f7;
+}
+
+// cards
+#hotelLobby {
+  display: grid;
+  gap: 1rem; // Space between sections
+  grid-template-columns: 1fr 1fr; // Force single column by default
+}
