@@ -33,6 +33,12 @@ nav {
 // cards
 #hotelLobby {
   display: grid;
-  gap: 1rem; // Space between sections
+  column-gap: 1rem; // Space between sections
   grid-template-columns: 1fr 1fr; // Force single column by default
+  section {
+    grid-template-areas:
+      "name name"
+      "photo location"
+      "photo number";
+  }
 }

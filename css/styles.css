@@ -429,19 +429,14 @@ main p {
   line-height: 150%;
 }
 
-#hotelLobby {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-  padding: 1rem;
-}
 #hotelLobby section {
+  display: grid;
+  grid-template-areas: "photo" "name" "location" "phone";
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -453,10 +448,7 @@ main p {
 }
 #hotelLobby img {
   width: 100%;
-  max-width: 400px;
-  height: 240px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: auto;
   border-radius: 10px;
   border: 2px solid #7097a6;
 }
@@ -612,7 +604,11 @@ footer a:hover {
   }
   #hotelLobby {
     display: grid;
-    gap: 1rem;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
     grid-template-columns: 1fr 1fr;
+  }
+  #hotelLobby section {
+    grid-template-areas: "name name" "photo location" "photo number";
   }
 }/*# sourceMappingURL=styles.css.map */
