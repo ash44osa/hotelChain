@@ -29,34 +29,15 @@ header {
   align-items: center;
   padding: 0.75rem $gutter;
 
-  .logo {
-    display: flex;
-    align-items: center;
-
-    img {
-      width: auto;
-      max-width: 100%;
-      height: auto;
-    }
+  .logo img {
+    max-width: 100%;
+    height: auto;
   }
-
   span {
     font-size: 1.6rem;
     font-weight: $normalWeight;
     color: $primaryColor;
     text-align: center;
-  }
-
-  @media (min-width: 601px) {
-    .logo img {
-      width: 90px;
-    }
-  }
-
-  @media (min-width: 1201px) {
-    .logo img {
-      width: 135px;
-    }
   }
 }
 
