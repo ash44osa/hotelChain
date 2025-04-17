@@ -30,8 +30,9 @@ header {
   padding: 0.75rem $gutter;
 
   .logo img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    display: block;
   }
   span {
     font-size: 1.6rem;

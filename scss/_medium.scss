@@ -52,7 +52,7 @@
   }
 
   /* ----------- Medium Screens (Force One Column) ----------- */
-  @media (min-width: 768px) {
+  @media (min-width: 560px) {
     #hotelLobby {
       grid-template-columns: 1fr; // Force single column
     }
